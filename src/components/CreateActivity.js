@@ -6,6 +6,7 @@ function CreateActivity(props) {
   const [description, setDescription] = useState('');
   const [message, setMessage] = useState('');
   const [setModify] = [props.setModify];
+
   async function submitHandler(event) {
     event.preventDefault();
     setModify(true);
@@ -18,7 +19,9 @@ function CreateActivity(props) {
     setDescription('');
     setModify(false);
   }
+
   return (
+
     <div>
       <form className='createActivity' onSubmit={submitHandler}>
         <h2>Create Activity</h2>
@@ -26,7 +29,7 @@ function CreateActivity(props) {
           <label htmlFor='name'>Name</label>
           <input
             minLength={1}
-            id='name'
+            id='name
             type='text'
             placeholder='Name'
             value={name}
