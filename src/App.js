@@ -3,7 +3,7 @@ import { Route, Routes, Link } from 'react-router-dom';
 import {
 	Home,
 	// Login,
-	// Register,
+	Register,
 	Routines,
 	Activities,
 	MyRoutines,
@@ -13,6 +13,7 @@ import {
 import './components/styles/index.css';
 
 function App() {
+	const [itWorks, setItWorks] = useState(true);
 	const [token, setToken] = useState(
 		localStorage.getItem('token') ? localStorage.getItem('token') : ''
 	);
@@ -29,10 +30,10 @@ function App() {
 						</Link>
 						{/* <Link className="tab" to="/login">
 							Login/Logout
-						</Link>
+						</Link> */}
 						<Link className="tab" to="/register">
 							Register
-						</Link> */}
+						</Link>
 						<Link className="tab" to="/activities">
 							Activities
 						</Link>
@@ -62,9 +63,9 @@ function App() {
 								setToken={setToken}
 								username={username}
 								setUsername={setUsername}
-							/>
-						}
-					/>
+							/> */}
+						{/* }
+					/> */}
 					<Route
 						path="/register"
 						element={
@@ -73,9 +74,11 @@ function App() {
 								setToken={setToken}
 								username={username}
 								setUsername={setUsername}
+								itWorks={itWorks}
+          						setItWorks={setItWorks}
 							/>
 						}
-					/> */}
+					/>
 					<Route path="/routines" element={<Routines />} />
 					<Route
 						path="/activities"

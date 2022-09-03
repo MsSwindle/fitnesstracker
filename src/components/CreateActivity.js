@@ -8,48 +8,50 @@ function CreateActivity(props) {
   const [setModify] = [props.setModify]
   async function submitHandler(event) {
     event.preventDefault();
-    setModify(true)
-    const result = await postActivities(name, description)
+    setModify(true);
+    const result = await postActivities(name, description);
     setMessage(result.message);
     if (!message) {
-      setMessage("Activity Added");
+      setMessage('Activity Added');
     }
-    setName("");
-    setDescription("");
+    setName('');
+    setDescription('');
     setModify(false);
   }
 
   return (
 
     <div>
-      <form className="createActivity" onSubmit={submitHandler}>
+      <form className='createActivity' onSubmit={submitHandler}>
         <h2>Create Activity</h2>
         <fieldset>
           <label htmlFor='name'>Name</label>
           <input
             minLength={1}
-            id="name"
-            type="text"
-            placeholder="Name"
+            id='name'
+            type='text'
+            placeholder='Name'
             value={name}
             onChange={(e) => {
               setName(e.target.value);
             }}
-          /></fieldset>
+          />
+        </fieldset>
         <fieldset>
           <label htmlFor='description'>Description</label>
           <input
             minLength={1}
-            id="description"
-            type="text"
-            placeholder="Description"
+            id='description'
+            type='text'
+            placeholder='Description'
             value={description}
             onChange={(e) => {
               setDescription(e.target.value);
             }}
-          /></fieldset>
+          />
+        </fieldset>
         <fieldset>
-          <button type="submit">Submit</button>
+          <button type='submit'>Submit</button>
           <p>{message}</p>
         </fieldset>
       </form>

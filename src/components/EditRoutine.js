@@ -96,5 +96,4 @@ function EditRoutine(props) {
 		</div>
 	);
 }
-
 export default EditRoutine;
