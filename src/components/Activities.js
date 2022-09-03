@@ -3,12 +3,9 @@ import { useState, useEffect } from "react";
 import React from "react";
 import { Link } from "react-router-dom"
 import { CreateActivity } from "./index.js";
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 1211b3ce24103018a9c43c55ebc3d969b33294ad
 function Activities(props) {
     const [token] = [props.token]
     const [activities, setActivities] = useState([]);
@@ -18,10 +15,6 @@ function Activities(props) {
         setActivities(allActivities)
     }
     useEffect(() => { acts() }, [modify])
-<<<<<<< HEAD
-
-=======
->>>>>>> 1211b3ce24103018a9c43c55ebc3d969b33294ad
     return (
         <div className="activities">
             {(token ? < CreateActivity setModify={setModify} /> : null)}
