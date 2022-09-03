@@ -13,6 +13,93 @@ import {
 import './components/styles/index.css';
 
 function App() {
+<<<<<<< HEAD
+	const [token, setToken] = useState(
+		localStorage.getItem('token') ? localStorage.getItem('token') : ''
+	);
+	const [username, setUsername] = useState(
+		localStorage.getItem('username') ? localStorage.getItem('username') : ''
+	);
+	return (
+		<div>
+			<main>
+				<div className="title">Fitness Tracker</div>
+				<div className="header">
+					<nav>
+						<Link className="tab" to="/home">
+							Home
+						</Link>
+						<Link className="tab" to="/login">
+							Login/Logout
+						</Link>
+						<Link className="tab" to="/register">
+							Register
+						</Link>
+						<Link className="tab" to="/activities">
+							Activities
+						</Link>
+						<Link className="tab" to="/routines">
+							Routines
+						</Link>
+						{token ? (
+							<Link className="tab" to="/routines/me">
+								My Routines
+							</Link>
+						) : null}
+					</nav>
+					{token ? (
+						<div className="currentUser">
+							<h3>Logged in as {username}</h3>
+						</div>
+					) : null}
+				</div>
+				<Routes>
+					<Route path="/" element={<Home token={token} />} />
+					<Route path="/home" element={<Home token={token} />} />
+					<Route
+						path="/login"
+						element={
+							<Login
+								token={token}
+								setToken={setToken}
+								username={username}
+								setUsername={setUsername}
+							/>
+						}
+					/>
+
+					<Route
+						path="/register"
+						element={
+							<Register
+								setToken={setToken}
+								username={username}
+								setUsername={setUsername}
+							/>
+						}
+					/>
+
+					<Route path="/routines" element={<Routines />} />
+					<Route
+						path="/activities"
+						element={<Activities token={token} />}
+					/>
+					<Route
+						path="/routines/me"
+						element={
+							<MyRoutines token={token} username={username} />
+						}
+					/>
+					<Route path="/routines/:user" element={<UserRoutines />} />
+					<Route
+						path="/routines/activity/:activityId"
+						element={<ActivityRoutines />}
+					/>
+				</Routes>
+			</main>
+		</div>
+	);
+=======
   const [token, setToken] = useState(
     localStorage.getItem('token') ? localStorage.getItem('token') : ''
   );
@@ -92,6 +179,7 @@ function App() {
       </main>
     </div>
   );
+>>>>>>> 2f415cbc0abc6b622a627d1e800e7b070663f086
 }
 
 export default App;
