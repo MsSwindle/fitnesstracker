@@ -2,11 +2,13 @@ import { publicRoutines } from "../api"
 import { useState, useEffect, } from "react"
 import React from "react"
 import { Link } from "react-router-dom";
+import CreateRoutine from "./CreateRoutine"
 
-
-function Routines() {
+function Routines(props) {
+    const token = props.token
+    console.log(token)
     const [routines, setRoutines] = useState([]);
-
+    const [modify, setModify] = useState(false)
     const pubRout = async () => {
         const allRoutines = await publicRoutines()
         setRoutines(allRoutines)
@@ -15,6 +17,7 @@ function Routines() {
 
     return (
         <div>
+    {token &&<CreateRoutine setModifyRoutine={setModify} token={token} />}
             {routines.map((routine) => {
                 return (
                     <div key={routine.id} className="routines">

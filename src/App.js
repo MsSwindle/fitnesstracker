@@ -20,7 +20,7 @@ function App() {
 		localStorage.getItem('username') ? localStorage.getItem('username') : ''
 	);
 	return (
-		<div>
+		<div className="container">
 			<main>
 				<div className="title">Fitness Tracker</div>
 				<div className="header">
@@ -77,7 +77,11 @@ function App() {
 							/>
 						}
 					/>
-					<Route path="/routines" element={<Routines />} />
+					<Route path="/routines" element={
+					<Routines 
+						token={token}
+						/>
+					} />
 					<Route
 						path="/activities"
 						element={<Activities token={token} />}

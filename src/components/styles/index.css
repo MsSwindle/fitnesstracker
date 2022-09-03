@@ -39,10 +39,11 @@ a:hover {
 }
 
 .home,
-.posts,
+/* .posts, */
 .login,
 .activities,
-.register {
+.register
+ {
   padding: 70px 0;
   text-align: center;
 }
@@ -51,4 +52,8 @@ a:hover {
   background: #ffff;
   position: sticky;
   top: 0;
+}
+
+.createActivity {
+  color: pink;
 }

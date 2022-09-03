@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { attachActivities, getActivities, editActivity } from '../api';
+
 function AttachActivities(props) {
   const [count, setCount] = useState(props.count ? props.count : '');
   const [duration, setDuration] = useState(
@@ -77,13 +78,16 @@ function AttachActivities(props) {
                 value={activityId}
                 onChange={(event) => setActivityId(event.target.value)}
               >
-                <option value='Choose activity below'>
+                <option 
+                value='Choose activity below'>
                   Choose activity below
                 </option>
                 {activityList.map((activity) => {
                   if (!currActArr.includes(activity.id)) {
                     return (
-                      <option key={activity.id} value={activity.id}>
+                      <option 
+                      key={activity.id} 
+                      value={activity.id}>
                         {activity.name}
                       </option>
                     );
