@@ -1,5 +1,3 @@
-import { useResolvedPath } from 'react-router-dom';
-
 const baseUrl = 'https://fitnesstrac-kr.herokuapp.com/api/';
 
 export const userRegistration = async (username, password) => {
