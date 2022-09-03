@@ -1,59 +1,73 @@
-
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 import { userRegistration } from "../api";
-import { Link } from "react-router-dom";
-
-function Register (props) {
-    const [token, setToken, username, setUsername, itWorks, setItWorks] = [props.token, props.setToken, props.username, props.setUsername, props.itWorks, props.setItWorks];
-    const [password, setPassword] = useState("");
-    const [message, setMessage] = useState("");
-
-    const submitHandler = async (event) => {
-        event.preventDefault();
-        const result = await userRegistration(username, password);
-        setMessage(result.message);
-        if (result.token) {
-            console.log(token, "wuuut");
-            setToken(result.token);
-            localStorage.setItem("token", result.token);
-            localStorage.setItem("username", username);
-        } else {
-            setItWorks(false)
-            setMessage('User already exists!')
+function Register(props) {
+  const [token, setToken, username, setUsername] = [props.token, props.setToken, props.username, props.setUsername];
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const SubmitHandler = async (e) => {
+    e.preventDefault();
+    const result = await userRegistration(username, password);
+    setMessage(result.message);
+    if (result.token) {
+      setToken(result.token);
+      localStorage.setItem("token", result.token);
+      localStorage.setItem("username", username);
     }
-   
-    };
-    return (
-    <div id='register'>
-        <form onSubmit={submitHandler}>
-        <h3 className='reg-here'>Register Here:</h3>
-            <div className='register-form'>
-                <label>Create Username: </label>
-                <input 
-                type='text'
-                name='login'
-                autoComplete="off"
-                required={true}
-                onChange={(event) => {
-            setUsername(event.target.value);
-                }}
-                ></input><br/>
-                <label>Create Password: </label>
-                <input 
-                type='text'
-                name='password'
-                autoComplete="off"
-                required={true}
-                onChange={(event) => {
-            setPassword(event.target.value);
-        }}
-            ></input><br/>
-            </div>
-            {itWorks ? null : <span>{message}</span>}
-            <button className='create-account' type='submit'>Create Account</button><br />
-            <Link to='/login'>Already Registered? Click Here!</Link>
+  };
+  return (
+    (token ? (<div className="registerPage">
+      <h2>Register</h2>
+      <h3>Logged in as {username}</h3>
+      <button
+        onClick={() => {
+          localStorage.removeItem("token");
+          setToken("");
+        }}>Log Out</button>
+    </div>) : (
+      <div className="registerPage">
+        <form className="register" onSubmit={SubmitHandler}>
+          <h2>Register</h2>
+          <fieldset>
+            <label htmlFor='username'>Username</label>
+            <input
+              minLength={1}
+              id="username"
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
+            /></fieldset>
+          <fieldset>
+            <label htmlFor="password">Password</label>
+            <input
+              minLength={1}
+              id="password"
+              type="text"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            /></fieldset>
+          <fieldset>
+            <button type="submit">Register</button>
+            <p>{message}</p>
+          </fieldset>
         </form>
-    </div>
-    )};
+      </div>
+    ))
+  );
+}
+export default Register;
 
-export default Register
+
+
+
+
+
+
+
+

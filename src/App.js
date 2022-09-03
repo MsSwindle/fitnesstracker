@@ -13,7 +13,6 @@ import {
 import './components/styles/index.css';
 
 function App() {
-	const [itWorks, setItWorks] = useState(true);
 	const [token, setToken] = useState(
 		localStorage.getItem('token') ? localStorage.getItem('token') : ''
 	);
@@ -70,12 +69,9 @@ function App() {
 						path="/register"
 						element={
 							<Register
-								token={token}
 								setToken={setToken}
 								username={username}
 								setUsername={setUsername}
-								itWorks={itWorks}
-          						setItWorks={setItWorks}
 							/>
 						}
 					/>
