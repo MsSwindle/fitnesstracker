@@ -13,7 +13,7 @@ const Home = () => {
     <br />
 
       <p>New User? 
-      <span> <Link to='Register'>Sign up here</Link></span>
+      <span> <Link to='/register'>Sign up here</Link></span>
       </p>
     </div>
   );

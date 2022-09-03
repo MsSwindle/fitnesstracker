@@ -59,22 +59,7 @@ function Register(props) {
         </form>
       </div>
     ))
-<<<<<<< HEAD
 
   );
 }
 export default Register;
-=======
-  );
-}
-export default Register;
-
-
-
-
-
-
-
-
-
->>>>>>> refs/remotes/origin/main
