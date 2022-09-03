@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import {
+	Navbar,
 	Home,
-	// Login,
+	Login,
 	Register,
 	Routines,
 	Activities,
 	MyRoutines,
 	UserRoutines,
 	ActivityRoutines,
-} from './components/index.js';
+} from './components/';
 import './components/styles/index.css';
 
 function App() {
@@ -28,9 +29,9 @@ function App() {
 						<Link className="tab" to="/home">
 							Home
 						</Link>
-						{/* <Link className="tab" to="/login">
+						<Link className="tab" to="/login">
 							Login/Logout
-						</Link> */}
+						</Link>
 						<Link className="tab" to="/register">
 							Register
 						</Link>
@@ -55,7 +56,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home token={token} />} />
 					<Route path="/home" element={<Home token={token} />} />
-					{/* <Route
+					 <Route
 						path="/login"
 						element={
 							<Login
@@ -63,9 +64,11 @@ function App() {
 								setToken={setToken}
 								username={username}
 								setUsername={setUsername}
-							/> */}
-						{/* }
-					/> */}
+							/> 
+						}
+					
+					/> 
+
 					<Route
 						path="/register"
 						element={
@@ -79,6 +82,7 @@ function App() {
 							/>
 						}
 					/>
+
 					<Route path="/routines" element={<Routines />} />
 					<Route
 						path="/activities"
