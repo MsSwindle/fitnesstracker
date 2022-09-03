@@ -28,9 +28,11 @@ function CreateActivity(props) {
           <label htmlFor='name'>Name</label>
           <input
             minLength={1}
+
             id="name"
             type="text"
             placeholder="Name"
+
             value={name}
             onChange={(e) => {
               setName(e.target.value);
@@ -55,5 +57,7 @@ function CreateActivity(props) {
       </form>
     </div>
   );
+
 }
+
 export default CreateActivity;

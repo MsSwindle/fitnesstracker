@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
+
     <div className="home">
     <h1>Welcome to Fitness Trak.r!</h1>
     <h3>This is a site for you to find and share your workout routines with others. </h3>
