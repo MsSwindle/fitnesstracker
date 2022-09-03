@@ -10,9 +10,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn, loggedInUsername }) => {
 
     return (
         <div id="Navbar">
-            <div className='header'>
-                Fitness Trak.r
-            </div>
+
 
 
             <div id="navbarLinks">

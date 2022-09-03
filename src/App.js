@@ -22,6 +22,9 @@ function App() {
 	return (
 		<div>
 			<main>
+			<div className='title'>
+        Fitness Trak.r
+      </div>
 				<div className="header">
 					<nav>
 						<Link className="tab" to="/home">
