@@ -26,7 +26,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn, loggedInUsername }) => {
                 <Link to="/" className='navText'>HOME</Link>
 
                 {isLoggedIn ?
-                    <Link to="/myroutines" className='navText'>
+                    <Link to="/MyRoutines" className='navText'>
                         MY ROUTINES
                     </Link>
                     :
