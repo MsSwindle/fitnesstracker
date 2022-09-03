@@ -22,9 +22,7 @@ function App() {
 	return (
 		<div>
 			<main>
-			<div className='title'>
-        Fitness Trak.r
-      </div>
+				<div className="title">Fitness Tracker</div>
 				<div className="header">
 					<nav>
 						<Link className="tab" to="/home">
@@ -57,7 +55,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home token={token} />} />
 					<Route path="/home" element={<Home token={token} />} />
-					 <Route
+					<Route
 						path="/login"
 						element={
 							<Login
@@ -65,10 +63,9 @@ function App() {
 								setToken={setToken}
 								username={username}
 								setUsername={setUsername}
-							/> 
+							/>
 						}
-					
-					/> 
+					/>
 
 					<Route
 						path="/register"
