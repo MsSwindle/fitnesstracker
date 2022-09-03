@@ -1,4 +1,4 @@
-const baseUrl = 'https://fitnesstrac-kr.herokuapp.com/api/';
+const baseUrl = 'https://fitnesstrac-kr.herokuapp.com/api';
 
 export const userRegistration = async (username, password) => {
 	const response = await fetch(`${baseUrl}/users/register`, {
@@ -124,20 +124,26 @@ export const attachActivities = async (
 };
 
 export const createRoutine = async (name, goal, isPublic, token) => {
-	const response = await fetch(`${baseUrl}/routines`, {
-		headers: {
-			'Content-Type': 'application/json',
-			Authorization: `Bearer ${token}`,
-		},
-		method: 'POST',
-		body: JSON.stringify({
-			name: name,
-			goal: goal,
-			isPublic: isPublic,
-		}),
-	});
-	const result = await response.json();
-	return result;
+	console.log(name, goal, isPublic,)
+	try {
+		const response = await fetch(`${baseUrl}/routines`, {
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${token}`,
+			},
+			method: 'POST',
+			body: JSON.stringify({
+				name: name,
+				goal: goal,
+				isPublic: isPublic,
+			}),
+		});
+		const result = await response.json();
+		return result;
+	} catch (error) {
+		console.error(error)
+	}
+	
 };
 
 export const deleteRoutine = async (routineId, token) => {

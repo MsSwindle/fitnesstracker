@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react"
 import { postActivities } from "../api"
 
+
 function CreateActivity(props) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -21,7 +22,7 @@ function CreateActivity(props) {
   }
   
   return (
-    <div>
+    <div className="createActivity">
       <form className="createActivity" onSubmit={submitHandler}>
         <h2>Create Activity</h2>
         <fieldset>

@@ -1,11 +1,11 @@
 import {
 	getUserRoutines,
 	deleteRoutine,
-	deleteActivity
+	deleteActivity,
   } from "../api";
   import { useState, useEffect } from "react";
   import React from "react";
-  import { createRoutine, attachActivities, editRoutine } from "../api";
+  import { CreateRoutine, AttachActivities, EditRoutine } from "./index";
   import { Link } from "react-router-dom";
   
   function MyRoutines(props) {
@@ -28,7 +28,7 @@ import {
   
 	return (
 	  <div className="myRoutines">
-		<createRoutine token={token} setModifyRoutine={setModifyRoutine} />
+		<CreateRoutine token={token} setModifyRoutine={setModifyRoutine} />
 		{routines.map((routine) => {
 		  let currActArr = [];
 		  return (
@@ -52,7 +52,7 @@ import {
 					  </ul>
   
 					  {modEditAttAct === activity.routineActivityId ? (
-						<attachActivities
+						<AttachActivities
 						  setModEditAttAct={setModEditAttAct}
 						  count={activity.count}
 						  duration={activity.duration}
@@ -91,7 +91,7 @@ import {
 			  </div>
   
 			  {modEditAttAct === routine.id ? (
-				<attachActivities
+				<AttachActivities
 				  setModEditAttAct={setModEditAttAct}
 				  routineId={routine.id}
 				  currActArr={currActArr}
@@ -99,7 +99,7 @@ import {
 			  ) : null}
 			  {modRout === routine.id ? (
 				<>
-				  <editRoutine
+				  <EditRoutine
 					token={token}
 					setModRout={setModRout}
 					name={routine.name}
