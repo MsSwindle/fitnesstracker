@@ -5,7 +5,6 @@ function Register(props) {
   const [token, setToken, username, setUsername] = [props.token, props.setToken, props.username, props.setUsername];
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-
   const SubmitHandler = async (e) => {
     e.preventDefault();
     const result = await userRegistration(username, password);
@@ -60,7 +59,22 @@ function Register(props) {
         </form>
       </div>
     ))
+<<<<<<< HEAD
 
   );
 }
 export default Register;
+=======
+  );
+}
+export default Register;
+
+
+
+
+
+
+
+
+
+>>>>>>> refs/remotes/origin/main

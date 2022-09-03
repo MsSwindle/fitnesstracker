@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import {
-	Navbar,
 	Home,
 	Login,
 	Register,
@@ -10,11 +9,10 @@ import {
 	MyRoutines,
 	UserRoutines,
 	ActivityRoutines,
-} from './components/';
+} from './components/index.js';
 import './components/styles/index.css';
 
 function App() {
-	const [itWorks, setItWorks] = useState(true);
 	const [token, setToken] = useState(
 		localStorage.getItem('token') ? localStorage.getItem('token') : ''
 	);
@@ -24,6 +22,9 @@ function App() {
 	return (
 		<div>
 			<main>
+			<div className='title'>
+        Fitness Trak.r
+      </div>
 				<div className="header">
 					<nav>
 						<Link className="tab" to="/home">
@@ -73,12 +74,9 @@ function App() {
 						path="/register"
 						element={
 							<Register
-								token={token}
 								setToken={setToken}
 								username={username}
 								setUsername={setUsername}
-								itWorks={itWorks}
-          						setItWorks={setItWorks}
 							/>
 						}
 					/>
