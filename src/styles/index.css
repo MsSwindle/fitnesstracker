@@ -39,10 +39,9 @@ a:hover {
 }
 
 .home,
-/* .posts, */
-.login,
+.loginPage,
 .activities,
-.register
+.registerPage
  {
   padding: 70px 0;
   text-align: center;

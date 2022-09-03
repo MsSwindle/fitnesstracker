@@ -6,9 +6,9 @@ import CreateRoutine from "./CreateRoutine"
 
 function Routines(props) {
     const token = props.token
-    console.log(token)
     const [routines, setRoutines] = useState([]);
     const [modify, setModify] = useState(false)
+
     const pubRout = async () => {
         const allRoutines = await publicRoutines()
         setRoutines(allRoutines)
@@ -16,7 +16,7 @@ function Routines(props) {
     useEffect(() => { pubRout() }, [])
 
     return (
-        <div>
+        <div className='routines'>
     {token &&<CreateRoutine setModifyRoutine={setModify} token={token} />}
             {routines.map((routine) => {
                 return (
