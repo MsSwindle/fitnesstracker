@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import {
-	Navbar,
 	Home,
 	// Login,
 	// Register,
@@ -23,6 +22,9 @@ function App() {
 	return (
 		<div>
 			<main>
+			<div className='title'>
+        Fitness Trak.r
+      </div>
 				<div className="header">
 					<nav>
 						<Link className="tab" to="/home">
