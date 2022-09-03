@@ -59,7 +59,6 @@ function Register(props) {
         </form>
       </div>
     ))
-
   );
 }
 export default Register;
