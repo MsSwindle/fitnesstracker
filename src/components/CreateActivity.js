@@ -9,6 +9,7 @@ function CreateActivity(props) {
   const [message, setMessage] = useState("")
   const [setModify] = [props.setModify]
 
+  
   async function submitHandler(event) {
     event.preventDefault();
     setModify(true)

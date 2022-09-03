@@ -25,7 +25,6 @@ function AttachActivities(props) {
     props.token,
     props.currActArr,
   ];
-  
   async function setAllActs() {
     const allActs = await getActivities();
     setActivityList(allActs);
