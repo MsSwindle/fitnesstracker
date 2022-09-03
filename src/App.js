@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import {
+	Navbar,
 	Home,
 	// Login,
 	// Register,
@@ -9,7 +10,7 @@ import {
 	MyRoutines,
 	UserRoutines,
 	ActivityRoutines,
-} from './components/index.js';
+} from './components/';
 import './components/styles/index.css';
 
 function App() {

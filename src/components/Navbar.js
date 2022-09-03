@@ -10,14 +10,12 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn, loggedInUsername }) => {
 
     return (
         <div id="Navbar">
-            <div id='siteName' className='navText'>
+            <div className='header'>
                 Fitness Trak.r
             </div>
 
 
-
-
-            <div id="siteLinks">
+            <div id="navbarLinks">
 
                 {isLoggedIn ?
                     <span className="welcomeUser">{`Welcome, ${loggedInUsername}`}</span>
