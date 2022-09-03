@@ -1,19 +1,11 @@
 import React from "react";
 import { useState } from "react"
 import { postActivities } from "../api"
-<<<<<<< HEAD
-
-=======
->>>>>>> 1211b3ce24103018a9c43c55ebc3d969b33294ad
 function CreateActivity(props) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [message, setMessage] = useState("")
   const [setModify] = [props.setModify]
-<<<<<<< HEAD
-
-=======
->>>>>>> 1211b3ce24103018a9c43c55ebc3d969b33294ad
   async function submitHandler(event) {
     event.preventDefault();
     setModify(true)
@@ -26,13 +18,9 @@ function CreateActivity(props) {
     setDescription("");
     setModify(false);
   }
-<<<<<<< HEAD
 
   return (
 
-=======
-  return (
->>>>>>> 1211b3ce24103018a9c43c55ebc3d969b33294ad
     <div>
       <form className="createActivity" onSubmit={submitHandler}>
         <h2>Create Activity</h2>
@@ -67,24 +55,7 @@ function CreateActivity(props) {
       </form>
     </div>
   );
-<<<<<<< HEAD
 
 }
 
 export default CreateActivity;
-=======
-}
-export default CreateActivity;
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 1211b3ce24103018a9c43c55ebc3d969b33294ad
