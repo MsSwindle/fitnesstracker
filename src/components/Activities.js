@@ -17,7 +17,7 @@ function Activities(props) {
     useEffect(() => { acts() }, [modify])
     return (
         <div className="activities">
-            {(token ? < CreateActivity setModify={setModify} /> : null)}
+            {(token ? < CreateActivity setModify={setModify} token={token} /> : null)}
             {activities.map((activity) => {
                 return (
                     <div className="displayCard" key={activity.id}>
