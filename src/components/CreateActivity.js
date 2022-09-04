@@ -8,12 +8,12 @@ function CreateActivity(props) {
   const [description, setDescription] = useState("");
   const [message, setMessage] = useState("")
   const [setModify] = [props.setModify]
+  const token = props.token
 
-  
   async function submitHandler(event) {
     event.preventDefault();
     setModify(true)
-    const result = await postActivities(name, description)
+    const result = await postActivities(name, description, token)
     setMessage(result.message);
     if (!message) {
       setMessage("Activity Added");
